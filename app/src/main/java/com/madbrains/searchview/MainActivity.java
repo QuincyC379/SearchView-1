@@ -26,7 +26,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private RecyclerView recyclerView;
-    private TextView textView;
     private DataAdapter adapter;
     private ArrayList<String> names;
 
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
         recyclerView.setItemAnimator(itemAnimator);
 
+        //Fill ArrayList
         names.add("Россия");
         names.add("Украина");
         names.add("Индия");
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         names.add("Ямайка");
 
         adapter = new DataAdapter(names, this);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL)); //add divider to RecyclerView
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
